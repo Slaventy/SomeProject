@@ -16,7 +16,6 @@ if($conn->query("DROP DATABASE ".NAME_BASE_DATA) === TRUE){
     printf("Предыдущяя БД удалена\n");
 }else{
     printf("Предыдущуу БД удалить не удалось: %s\n", $conn->connect_error);
-    exit();
 }
 //создаем новую БД
 if($conn->query("CREATE DATABASE ".NAME_BASE_DATA) === TRUE){
@@ -33,7 +32,7 @@ if($conn->query("USE ".NAME_BASE_DATA) === TRUE){
     exit();
 }
 //создаем таблицу
-if($conn->query("CREATE TABLE ".NAME_TABLE_ORDER."(".COLUMN_1." INT(6)UNSIGNED AUTO_INCREMENT PRIMARY KEY,".
+if($conn->query("CREATE TABLE ".NAME_TABLE_ORDER."(".COLUMN_1." INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,".
         COLUMN_2." VARCHAR(20),".COLUMN_3." VARCHAR(20),".COLUMN_4." VARCHAR(20))") === TRUE){
     printf("Таблица создана\n");
 }else{
