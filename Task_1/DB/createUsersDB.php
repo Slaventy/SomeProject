@@ -41,11 +41,14 @@ if($conn->query("CREATE TABLE ".NAME_TABLE_ORDER."(".COLUMN_1." INT(6) UNSIGNED 
 }
 //заполняем поля таблицы
 foreach (INITIAL_BASE_OF_USERS as $val) {
+    $pas=base64_encode($val[COLUMN_3]);
         if ($conn->query("INSERT INTO " . NAME_TABLE_ORDER ." VALUES ('".$val[COLUMN_1].
-                "','".$val[COLUMN_2]."','".$val[COLUMN_3]."','".$val[COLUMN_4]."')") === TRUE) {
+                "','".$val[COLUMN_2]."','".$pas."','".$val[COLUMN_4]."')") === TRUE) {
             printf("Запись внесена\n");
         } else {
             printf("запись не внесена: %s\n", $conn->connect_error);
             exit();
         }
 }
+
+$conn->close();

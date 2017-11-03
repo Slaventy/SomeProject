@@ -2,11 +2,11 @@
 <body>
 <!-- выводим поля для аутитенфикации пользователя -->
 <!-- для отображения формы необходимо наличие в куках идентификатора пользователя-->
-    <form action="handler.php" method="post">
-        <p><input required name="login" type="text"> Login</p>
-        <p><input required name="password" type="text"> Password</p>
-        <p><input  name="email" type="text"> e-mail</p>
-        <p><input  type="submit"></p>
+    <form action="hendler.php" method="post">
+        <p><input title="login" required name="login" type="text"> Login</p>
+        <p><input title="password" required name="password" type="text"> Password</p>
+        <p><input title="email" name="email"  type="text"> e-mail</p>
+        <p><input title="submit" name="submit" type="submit" ></p>
     </form>
 <!-- при наличии идентификатора пользовтеля выводится -->
 <form action="handler.php" method="post">
