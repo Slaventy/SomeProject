@@ -1,5 +1,5 @@
 <?php
-//перечень юзеров в БД
+//перечень юзеров для БД
     const INITIAL_BASE_OF_USERS  = [
         1 =>[
             "user_id"   => 1,

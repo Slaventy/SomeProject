@@ -4,7 +4,7 @@
     //данные пользователя
     const SERVER_NAME = "localhost";
     const USERNAME = "root";
-    const PASSWORD = "ckfdrbyf,fpf";
+    const PASSWORD = "root";
 
     //база данных
     const NAME_BASE_DATA = "Task1_users";
