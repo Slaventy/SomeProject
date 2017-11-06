@@ -4,11 +4,10 @@ $err = 0; //контроль ошибок
 
 //Нажата кнопка регистрации
 if(isset($_POST["submit"])){
-    $err = login($_POST["login"], base64_encode($_POST["password"]), $_POST["email"]);
-    if($err == 0){
+    if(login($_POST["login"], base64_encode($_POST["password"]), $_POST["email"])){
         header("Location:index.php");
     }else{
-        include "tpl/Shablon3.html";
+        include "tpl/errorAuthorization.html";
     }
 
 }
@@ -21,11 +20,11 @@ if(isset($_POST["exit"])){
 
 //проверка наличия регистрации пользователя
 if(isset($_COOKIE["key"]) && $err == 0){
-    include "tpl/Shablon2.html";
+    include "tpl/exit.html";
 
 }
 //проверка отсутствия регистрации пользователя
 if(!isset($_COOKIE["key"]) && $err == 0){
-    include "tpl/Shablon1.html";
+    include "tpl/authorization.html";
 
 }
