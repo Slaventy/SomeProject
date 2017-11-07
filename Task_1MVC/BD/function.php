@@ -46,3 +46,31 @@ function create_db_users($conn){
     return $err;
 }
 
+function createUserByAccessDB($conn){
+    $sql1 = "DROP USER 'userTask1'";
+    $sql2 = "CREATE USER 'userTask1' IDENTIFIED BY '123'";
+    $sql3 = "GRANT SELECT ON ".NAME_BASE_DATA.".".NAME_TABLE_ORDER." TO 'userTask1'";
+    $sql4 = "FLUSH PRIVILEGES";
+    $err = "";
+    if($conn->query($sql1)){
+        $err .= "0";
+    }else{
+        $err .= "1";
+    }
+    if($conn->query($sql2)){
+        $err .= "0";
+    }else{
+        $err .= "1";
+    }
+    if($conn->query($sql3)){
+        $err .= "0";
+    }else{
+        $err .= "1";
+    }
+    if($conn->query($sql4)){
+        $err .= "0";
+    }else{
+        $err .= "1";
+    }
+    return $err;
+}

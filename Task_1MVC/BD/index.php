@@ -18,5 +18,12 @@ if($err == 0){
     printf("при создании базы данных возникли ошибки. $err\n");
 }
 
+$errUs = createUserByAccessDB($conn);
+if($errUs){
+    printf("юзер успешно сформирован. $errUs\n");
+}else{
+    printf("не сформирован юзер. $errUs\n");
+}
+
 //закрываем соединение
 $conn->close();
